@@ -1,41 +1,45 @@
-// SIMULADOR DE IMPACTO
+// Barra de progresso superior
+window.onscroll = function() { updateProgressBar() };
+
+function updateProgressBar() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+// Simulador de Impacto Sustentável
 function calcularImpacto() {
     const kg = document.getElementById('alimentoRange').value;
     document.getElementById('kgValor').innerText = kg;
 
-    // Lógica fictícia baseada em dados de sustentabilidade
-    const agua = kg * 50; // 50 litros por kg economizado
-    const co2 = kg * 120; // 120g de CO2 a menos (transporte local)
+    // Estimativa: 1kg local poupa 50L de água e 150g de CO2 (transporte)
+    const agua = kg * 50;
+    const co2 = kg * 150;
 
     document.getElementById('aguaSalva').innerText = agua + "L";
     document.getElementById('co2Salvo').innerText = co2 + "g";
-
-    const msg = document.getElementById('msgImpacto');
-    if(kg > 40) msg.innerText = "Nível Guardião de Goioxim! 🌱";
-    else if(kg > 20) msg.innerText = "Herói do Consumo Local! 🍎";
-    else if(kg > 0) msg.innerText = "Iniciando sua jornada ODS!";
 }
 
-// MODO ECO
+// Acessibilidade: Modo Eco (Cores Escuras)
 function toggleEcoMode() {
     document.body.classList.toggle('eco-mode');
-    const icon = document.querySelector('.eco-toggle i');
-    if(document.body.classList.contains('eco-mode')) {
+    const icon = document.querySelector('.eco-btn-wrapper i');
+    if(document.body.classList.contains('eco-mode')){
         icon.classList.replace('fa-leaf', 'fa-moon');
     } else {
         icon.classList.replace('fa-moon', 'fa-leaf');
     }
 }
 
-// ANIMAÇÃO DE RASTREIO
-function animarRastro() {
-    const timeline = document.getElementById('timeline');
-    const txt = document.getElementById('detalheTxt');
+// Acessibilidade: Tamanho da Fonte
+function changeFontSize(action) {
+    const body = document.body;
+    let currentSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
     
-    timeline.classList.remove('hidden');
-    txt.innerText = "Buscando dados no Sítio Pinhalzinho...";
-    
-    setTimeout(() => {
-        txt.innerText = "Produto Identificado: Morango Orgânico. Colhido há 4h em Goioxim. Destino: Colégio Dr. João Ferreira Neves.";
-    }, 1500);
+    if (action === 'increase') {
+        body.style.fontSize = (currentSize + 2) + 'px';
+    } else {
+        body.style.fontSize = (currentSize - 2) + 'px';
+    }
 }
