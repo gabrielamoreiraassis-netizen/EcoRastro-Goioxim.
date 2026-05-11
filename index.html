@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoRastro Goioxim | Experiência ODS 2026</title>
+    <title>EcoRastro Goioxim | Sustentabilidade Digital</title>
+    
+    <meta property="og:title" content="EcoRastro Goioxim - Agrinho 2026">
+    <meta property="og:description" content="Inovação e Rastreabilidade na Agricultura Familiar de Goioxim.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=500">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -11,57 +16,66 @@
 </head>
 <body>
 
-    <div class="eco-toggle" onclick="toggleEcoMode()" title="Modo Economia de Energia">
-        <i class="fas fa-leaf"></i>
+    <div class="progress-bar" id="myBar"></div>
+
+    <div class="accessibility-bar">
+        <div class="container-acc">
+            <button onclick="changeFontSize('increase')" title="Aumentar Fonte">A+</button>
+            <button onclick="changeFontSize('decrease')" title="Diminuir Fonte">A-</button>
+            <div class="eco-btn-wrapper" onclick="toggleEcoMode()">
+                <i class="fas fa-leaf"></i> <span>Modo Sustentável</span>
+            </div>
+        </div>
     </div>
+
+    <a href="https://wa.me/5542984355135" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <header class="hero">
         <div class="glass-header" data-aos="zoom-in">
-            <span class="badge-agrinho">Agrinho 2026 • Tecnologia & Campo</span>
+            <span class="badge-agrinho">Agrinho 2026 • ODS 12 & 13</span>
             <h1>EcoRastro <span>Goioxim</span></h1>
-            <p>Rastreabilidade Digital: Conectando a semente do produtor ao coração do consumidor.</p>
+            <p>A primeira plataforma de rastreabilidade digital da nossa região. Do campo para a sua mesa.</p>
             <div class="hero-btns">
-                <a href="#experiencia" class="btn-primary">Iniciar Experiência</a>
-                <a href="#impacto" class="btn-outline">Ver Meu Impacto</a>
+                <a href="#experiencia" class="btn-primary">Explorar Agora</a>
+                <a href="#impacto" class="btn-outline">Meu Impacto</a>
             </div>
         </div>
-        <div class="scroll-indicator"></div>
     </header>
 
     <main>
         <section id="experiencia" class="section-info">
             <div class="container">
-                <h2 data-aos="fade-up">A Revolução na Palma da Mão</h2>
+                <h2 data-aos="fade-up">O Futuro é Sustentável</h2>
                 <div class="info-grid">
-                    <div class="info-card" data-aos="fade-right">
-                        <i class="fas fa-fingerprint"></i>
-                        <h3>Identidade Digital</h3>
-                        <p>Cada produto de Goioxim ganha um DNA digital que prova sua origem e qualidade.</p>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-box"><i class="fas fa-qrcode"></i></div>
+                        <h3>Rastreio Total</h3>
+                        <p>Saiba quem plantou, quando colheu e como chegou até você.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-up">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <h3>Km Zero</h3>
-                        <p>Reduzimos a emissão de CO2 ao eliminar intermediários e valorizar o transporte local.</p>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-box"><i class="fas fa-seedling"></i></div>
+                        <h3>Bio-Valor</h3>
+                        <p>Valorizamos o cultivo sem químicos, protegendo o solo de Goioxim.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-left">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <h3>ODS na Prática</h3>
-                        <p>Foco total nas metas da ONU para um mundo sem fome e com consumo consciente.</p>
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box"><i class="fas fa-globe-americas"></i></div>
+                        <h3>Impacto ODS</h3>
+                        <p>Transformamos metas globais em ações locais e reais.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="impacto" class="section-simulator">
-            <div class="glass-card" data-aos="flip-up">
-                <h2>Simulador de Impacto ODS</h2>
-                <p>Arraste para ver quanto você preserva ao comprar em Goioxim:</p>
-                
+            <div class="glass-card" data-aos="flip-down">
+                <h2>Calculadora de Impacto Positivo</h2>
+                <p>Quantos quilos de produtos locais você consome por mês?</p>
                 <div class="range-container">
-                    <input type="range" id="alimentoRange" min="0" max="50" value="0" oninput="calcularImpacto()">
-                    <span class="range-value"><span id="kgValor">0</span> kg de alimentos locais</span>
+                    <input type="range" id="alimentoRange" min="0" max="100" value="0" oninput="calcularImpacto()">
+                    <div class="range-display"><span id="kgValor">0</span> kg/mês</div>
                 </div>
-
                 <div class="results-grid">
                     <div class="res-item">
                         <i class="fas fa-tint"></i>
@@ -69,75 +83,35 @@
                         <p>Água Preservada</p>
                     </div>
                     <div class="res-item">
-                        <i class="fas fa-smog"></i>
+                        <i class="fas fa-cloud"></i>
                         <h4 id="co2Salvo">0g</h4>
-                        <p>CO2 Reduzido</p>
-                    </div>
-                </div>
-                <div class="impact-msg" id="msgImpacto">Faça sua primeira escolha sustentável!</div>
-            </div>
-        </section>
-
-        <section class="section-tracker">
-            <h2 data-aos="fade-down">Rastreie sua Colheita</h2>
-            <div class="tracker-box" data-aos="fade-up">
-                <div class="search-bar">
-                    <input type="text" id="loteInput" placeholder="Digite o código (ex: GXM-VERDE)">
-                    <button onclick="animarRastro()"><i class="fas fa-search"></i></button>
-                </div>
-                
-                <div id="timeline" class="hidden">
-                    <div class="track-line">
-                        <div class="track-step">
-                            <div class="icon-circle active"><i class="fas fa-seedling"></i></div>
-                            <span>Plantio</span>
-                        </div>
-                        <div class="track-step">
-                            <div class="icon-circle active"><i class="fas fa-sun"></i></div>
-                            <span>Manejo</span>
-                        </div>
-                        <div class="track-step">
-                            <div class="icon-circle"><i class="fas fa-check-circle"></i></div>
-                            <span>Mesa</span>
-                        </div>
-                    </div>
-                    <div class="track-detail">
-                        <p id="detalheTxt">Aguardando código...</p>
+                        <p>CO2 a menos</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section-ods">
-            <h2 data-aos="fade-up">Impacto Global em Goioxim</h2>
+            <h2 data-aos="fade-up">Goioxim conectada à ONU</h2>
             <div class="ods-flex">
-                <div class="ods-item" title="Fome Zero">
-                    <img src="https://static.un.org/brazil/sdgs/images/sdg2.png">
-                </div>
-                <div class="ods-item" title="Trabalho Decente">
-                    <img src="https://static.un.org/brazil/sdgs/images/sdg8.png">
-                </div>
-                <div class="ods-item" title="Consumo Responsável">
-                    <img src="https://static.un.org/brazil/sdgs/images/sdg12.png">
-                </div>
+                <img src="https://static.un.org/brazil/sdgs/images/sdg2.png" data-aos="zoom-in">
+                <img src="https://static.un.org/brazil/sdgs/images/sdg9.png" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://static.un.org/brazil/sdgs/images/sdg12.png" data-aos="zoom-in" data-aos-delay="200">
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <h3>EcoRastro Goioxim 🌿</h3>
-            <p>Projeto de Educação Digital - Profª Gabriela Moreira de Assis</p>
-            <p>Colégio Estadual Dr. João Ferreira Neves</p>
-            <div class="social-icons">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-whatsapp"></i>
-            </div>
+        <div class="footer-top">
+            <p>Inovação Pedagógica • Profª Gabriela Moreira de Assis</p>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 EcoRastro Goioxim - Colégio Estadual Dr. João Ferreira Neves
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
-    <script>AOS.init({duration: 1000});</script>
+    <script>AOS.init({once: true});</script>
 </body>
 </html>
