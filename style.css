@@ -1,0 +1,117 @@
+:root {
+    --primary: #2e7d32;
+    --accent: #aeea00;
+    --dark: #1b5e20;
+    --light: #f1f8e9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--light);
+    color: #333;
+}
+
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.tag-agrinho {
+    background: var(--accent);
+    color: var(--dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero h1 span { color: var(--accent); }
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--accent);
+    color: var(--dark);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.section-tracker { padding: 60px 20px; text-align: center; }
+
+.tracker-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.input-group input {
+    padding: 12px;
+    width: 60%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.input-group button {
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hidden { display: none; }
+
+.timeline {
+    margin-top: 30px;
+    text-align: left;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+}
+
+.step { margin-bottom: 20px; position: relative; }
+.step i { color: var(--primary); margin-right: 10px; }
+
+.impact-badge {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.ods-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.ods-card {
+    width: 200px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.ods-card img { width: 100%; border-radius: 10px; }
+
+footer { background: var(--dark); color: white; padding: 40px; text-align: center; }
