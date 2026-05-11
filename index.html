@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRastro Goioxim | Agrinho 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="tag-agrinho">Agrinho 2026 - ODS 12 & 13</span>
+            <h1>EcoRastro <span>Goioxim</span></h1>
+            <p>A tecnologia que revela a alma de cada semente da nossa terra.</p>
+            <a href="#rastreador" class="btn-main">Rastrear Alimento</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="rastreador" class="section-tracker">
+            <h2><i class="fas fa-qrcode"></i> Passaporte do Alimento</h2>
+            <p>Simule a leitura do QR Code da embalagem para ver a trajetória.</p>
+            
+            <div class="tracker-container">
+                <div class="input-group">
+                    <input type="text" id="loteInput" placeholder="Ex: GXM-2026-ALFACE">
+                    <button onclick="buscarRastro()">Consultar Origem</button>
+                </div>
+
+                <div id="resultadoRastro" class="rastro-display hidden">
+                    <div class="timeline">
+                        <div class="step">
+                            <i class="fas fa-seedling"></i>
+                            <h4>Plantio Sustentável</h4>
+                            <p>Sementes crioulas plantadas em 10/04/2026 no Sítio Pinhal.</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                            <h4>Manejo Biológico</h4>
+                            <p>Uso de biofertilizantes. Zero agrotóxicos químicos.</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-truck-loading"></i>
+                            <h4>Colheita & Km Zero</h4>
+                            <p>Colhido hoje às 06h. Viajou apenas 4km até você.</p>
+                        </div>
+                    </div>
+                    <div class="impact-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>Economia de 500g de CO2 no transporte!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ods-impact">
+            <h2>Nosso Compromisso com a ONU</h2>
+            <div class="ods-grid">
+                <div class="ods-card ods2">
+                    <img src="https://static.un.org/brazil/sdgs/images/sdg2.png" alt="ODS 2">
+                    <p>Fomentamos a segurança alimentar em Goioxim.</p>
+                </div>
+                <div class="ods-card ods12">
+                    <img src="https://static.un.org/brazil/sdgs/images/sdg12.png" alt="ODS 12">
+                    <p>Promovemos o consumo de quem produz perto de casa.</p>
+                </div>
+                <div class="ods-card ods13">
+                    <img src="https://static.un.org/brazil/sdgs/images/sdg13.png" alt="ODS 13">
+                    <p>Reduzimos a emissão de gases de efeito estufa.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto Desenvolvido por Profª Gabriela Assis & Alunos de Educação Digital</p>
+        <p>Colégio Estadual Dr. João Ferreira Neves | Goioxim - PR</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
