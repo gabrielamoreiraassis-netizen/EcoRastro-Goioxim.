@@ -1,27 +1,41 @@
-function buscarRastro() {
-    const input = document.getElementById('loteInput').value;
-    const resultado = document.getElementById('resultadoRastro');
+// SIMULADOR DE IMPACTO
+function calcularImpacto() {
+    const kg = document.getElementById('alimentoRange').value;
+    document.getElementById('kgValor').innerText = kg;
 
-    if (input.trim() === "") {
-        alert("Por favor, digite um código de lote ou nome de produto!");
-        return;
-    }
+    // Lógica fictícia baseada em dados de sustentabilidade
+    const agua = kg * 50; // 50 litros por kg economizado
+    const co2 = kg * 120; // 120g de CO2 a menos (transporte local)
 
-    // Simula o carregamento dos dados
-    resultado.classList.add('hidden');
-    
-    setTimeout(() => {
-        resultado.classList.remove('hidden');
-        resultado.style.animation = "fadeIn 0.8s ease-in";
-    }, 500);
+    document.getElementById('aguaSalva').innerText = agua + "L";
+    document.getElementById('co2Salvo').innerText = co2 + "g";
+
+    const msg = document.getElementById('msgImpacto');
+    if(kg > 40) msg.innerText = "Nível Guardião de Goioxim! 🌱";
+    else if(kg > 20) msg.innerText = "Herói do Consumo Local! 🍎";
+    else if(kg > 0) msg.innerText = "Iniciando sua jornada ODS!";
 }
 
-// Animação simples de entrada
-const style = document.createElement('style');
-style.innerHTML = `
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+// MODO ECO
+function toggleEcoMode() {
+    document.body.classList.toggle('eco-mode');
+    const icon = document.querySelector('.eco-toggle i');
+    if(document.body.classList.contains('eco-mode')) {
+        icon.classList.replace('fa-leaf', 'fa-moon');
+    } else {
+        icon.classList.replace('fa-moon', 'fa-leaf');
     }
-`;
-document.head.appendChild(style);
+}
+
+// ANIMAÇÃO DE RASTREIO
+function animarRastro() {
+    const timeline = document.getElementById('timeline');
+    const txt = document.getElementById('detalheTxt');
+    
+    timeline.classList.remove('hidden');
+    txt.innerText = "Buscando dados no Sítio Pinhalzinho...";
+    
+    setTimeout(() => {
+        txt.innerText = "Produto Identificado: Morango Orgânico. Colhido há 4h em Goioxim. Destino: Colégio Dr. João Ferreira Neves.";
+    }, 1500);
+}
